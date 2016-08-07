@@ -4,7 +4,7 @@ $( document ).ready(function() {
 function search_function(){
   //some code
   $.ajax({
-        url: "http://192.168.0.102:8000/reco/search",
+        url: "http://54.83.149.27:8000/reco/search",
         type: "get", //send it through get method
         data:{ajaxid:4, search_term:$(".search_text").val()},
         success: function(response) {
