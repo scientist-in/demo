@@ -67,7 +67,7 @@ $('.btnsubmit').click(function(){
     user_liked =[];
     for(var i=0; i<liked_movies.length; i++) { user_liked[i] = parseInt(liked_movies[i], 10); }
     $.ajax({
-        url: "http://192.168.0.102:8000/reco/recommendations",
+        url: "http://54.83.149.27:8000/reco/recommendations",
         type: "get", //send it through get method
         data:{ajaxid:5, user_liked:JSON.stringify(user_liked)},
         success: function(response) {
