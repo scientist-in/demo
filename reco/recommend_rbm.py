@@ -5,7 +5,7 @@ if os.getcwd() == '/home/keeda/Documents/scientist/demo/recosys/demo/reco':
     serverPath = "/home/keeda/Documents/scientist/demo/recosys/demo/"
     mypath ='/home/keeda/Documents/scientist/demo/recosys/demo/'
 else:
-    serverPath = "/home/ubuntu/scientist_demoes/"
+    serverPath = "/home/ubuntu/demo/"
     #mypath ='/home/ubuntu/scientist_demoes/media/documents/'
 
 import os
