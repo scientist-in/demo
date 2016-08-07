@@ -23,7 +23,10 @@ def search(request):
     words = request.GET.get('search_term')
     
     words_url_encoded = urllib.quote_plus(words)
-    solr_query = u"http://192.168.0.102:8983/solr/recosys/select?indent=on&q="+words_url_encoded+"&wt=json"
+    if os.getcwd() == '/home/keeda/Documents/scientist/demo/recosys/demo':
+        solr_query = u"http://192.168.0.102:8983/solr/recosys/select?indent=on&q="+words_url_encoded+"&wt=json"
+    else:
+        solr_query = u"http://54.83.149.27:8983/solr/recosys/select?indent=on&q="+words_url_encoded+"&wt=json"
     response_from_search = requests.get(solr_query)
     jsonRes = response_from_search.json()
     jsonRes = jsonRes['response']['docs']
