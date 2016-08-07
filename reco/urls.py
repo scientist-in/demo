@@ -4,6 +4,7 @@ from . import views
 from django.conf import settings
 
 urlpatterns = [
+    url(r'recommendations_nlp/$', views.get_recommendations_nlp, name='get_recommendations_nlp'),
     url(r'recommendations/$', views.get_recommendations, name='get_recommendations'),
     url(r'search/$', views.search, name='search'),
     url(r'^$', views.index, name='index')

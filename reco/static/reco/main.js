@@ -6,7 +6,7 @@ function search_function(){
   $.ajax({
         url: "http://54.83.149.27:8000/reco/search",
         type: "get", //send it through get method
-        data:{ajaxid:4, search_term:$(".search_text").val()},
+        data:{ajaxid:3, search_term:$(".search_text").val()},
         success: function(response) {
         if($('.search_results').length){
             $('.search_results').remove();
@@ -66,7 +66,8 @@ $(".liked_movies").on("click",".btn-danger", function(){
 $('.btnsubmit').click(function(){
     user_liked =[];
     for(var i=0; i<liked_movies.length; i++) { user_liked[i] = parseInt(liked_movies[i], 10); }
-    $.ajax({
+    if (user_liked.length>0){
+      $.ajax({
         url: "http://54.83.149.27:8000/reco/recommendations",
         type: "get", //send it through get method
         data:{ajaxid:5, user_liked:JSON.stringify(user_liked)},
@@ -79,5 +80,25 @@ $('.btnsubmit').click(function(){
         error: function(xhr) {
           //Do Something to handle error
         }
-    });    
     });
+      $.ajax({
+        //url: "http://54.83.149.27:8000/reco/recommendations_nlp",
+        url: "http://192.168.0.102:8000/reco/recommendations_nlp",
+        type: "get", //send it through get method
+        data:{ajaxid:5, user_liked:JSON.stringify(user_liked)},
+        success: function(response) {
+        if($('.recommendation_nlp').length){
+            $('.recommendation_nlp').remove();
+        }
+        $('.recommendations_nlp').append(response);
+        },
+        error: function(xhr) {
+          //Do Something to handle error
+        }
+    });  
+    }
+    else{
+      alert('Add a few movies to your favourite list...');
+        
+    }
+});
