@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'reco/style.css' %}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="shortcut icon" href="http://scientist.org.in/favicon.png">
         
     </head>
     <body>
@@ -24,7 +25,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Scientist</a>
+                    <a href="http://scientist.org.in" class="navbar-brand scroll-to"><img class="logo" src="http://scientist.org.in/img/logo.png" alt=""></a>
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -42,7 +43,7 @@
             <h3 class="text-muted">Try out a quick demo of Recommendation Engine<</h3>
           </div>
     
-          <div class="jumbotron">
+        <div class="jumbotron">
             <h2>Recommendation Engine</h2>
             <hr/>
             <p class="lead">Search for your recent favorite movies and let us know what you like </p>
@@ -71,13 +72,13 @@
             
       
        
-    </div>
-</div>
-<hr>
-    <div class=="container">
+        </div>
+        <hr>
+        <div class=="container">
     
         <div class="container jumbotron">
             <h2>Liked Movies</h2>
+            <hr>
             <div class="liked_movies">
                 
             </div>
@@ -86,7 +87,7 @@
             
             
               <div class="row ">
-            <div class="col-md-6 col-md-offset-5">
+            <div class="col-md-6 col-md-offset-3">
                 <button type="button" class="btn btn-warning btnsubmit">Get recommendations</button>    
             </div>
             
@@ -95,10 +96,12 @@
         
         <br>
     </div>
+        <hr>
     <div class=="container">
     
         <div class="jumbotron container">
             <h2>Similar Movies</h2>
+            <hr>
             <div class="recommendations_nlp">
                 
             </div>
@@ -109,10 +112,11 @@
         </div>
         
     </div>
-    <div class=="container">
+    <hr>
+    <div class="jumbotron container">
     
-        <div class="jumbotron container">
-        <h2>You might also like</h2>        
+        <h2>You might also like</h2>
+        <hr>    
             <div class="recommendations">
                 
             </div>
@@ -122,6 +126,8 @@
         </div>
         
     </div>
+
+    
     
     <hr>
       <div class="container footer-notes-full">
