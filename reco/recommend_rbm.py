@@ -26,13 +26,13 @@ ratings_wide = pd.pivot_table(ratings, values='liked', index=['userId'],columns=
 
 from rbm import RBM
 vi_unit = ratings_wide.shape[1]
-rbm = RBM(num_visible = vi_unit, num_hidden = 20)
+rbm = RBM(num_visible = vi_unit, num_hidden = 500)
 ratings_wide = ratings_wide.fillna(0)
 ratings_wide = ratings_wide.astype(int)
 training_data = ratings_wide.as_matrix()
 
 print('starting training')
-rbm.train(training_data, max_epochs = 2) # Don't run the training for more than 5000 epochs.
+rbm.train(training_data, max_epochs = 100) # Don't run the training for more than 5000 epochs.
 
 while(True):
     userInput = raw_input('enter "run" to predict: ')
