@@ -81,6 +81,11 @@ def get_recommendations_nlp(request):
     df = [re.sub(r"\n","",i) for i in df]
     all_tags = ''.join(str(i) for i in df)
     all_tags_encoded = urllib.quote_plus(all_tags)
+    if len(all_tags_encoded)>1990:
+        if all_tags_encoded[1990]=='+':
+            all_tags_encoded = all_tags_encoded[0:1989]
+        else:
+            all_tags_encoded = all_tags_encoded[0:1990]
     if os.getcwd() == '/home/keeda/Documents/scientist/demo/recosys/demo':
         solr_query = u"http://192.168.0.102:8983/solr/reconlp/select?indent=on&q="+all_tags_encoded+"&wt=json"
     else:
