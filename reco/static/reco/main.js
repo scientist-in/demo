@@ -82,8 +82,8 @@ $('.btnsubmit').click(function(){
         }
     });
       $.ajax({
-        //url: "http://54.83.149.27:8000/reco/recommendations_nlp",
-        url: "http://192.168.0.102:8000/reco/recommendations_nlp",
+        url: "http://54.83.149.27:8000/reco/recommendations_nlp",
+        //url: "http://192.168.0.102:8000/reco/recommendations_nlp",
         type: "get", //send it through get method
         data:{ajaxid:5, user_liked:JSON.stringify(user_liked)},
         success: function(response) {
