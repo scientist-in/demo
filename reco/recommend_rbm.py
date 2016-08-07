@@ -6,7 +6,7 @@ if os.getcwd() == '/home/keeda/Documents/scientist/demo/recosys/demo/reco':
     mypath ='/home/keeda/Documents/scientist/demo/recosys/demo/'
 else:
     serverPath = "/home/ubuntu/scientist_demoes/"
-    mypath ='/home/ubuntu/scientist_demoes/media/documents/'
+    #mypath ='/home/ubuntu/scientist_demoes/media/documents/'
 
 import os
 from subprocess import call
