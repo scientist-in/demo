@@ -3,6 +3,6 @@
 
 <ul class="list-group search_results">
     {% for i in search_len %}
-                         <li class="list-group-item col-md-3 col-sm-offset-2"><span>{{ movie_title|get_at_index:forloop.counter0 }}</span><span class="col-md-3"><button type = "button" class="btn-success" data-mid={{ movie_id|get_at_index:forloop.counter0 }}>Add</button></span></li>
+                         <li class="list-group-item col-md-6 col-sm-offset-3"><span>{{ movie_title|get_at_index:forloop.counter0 }}</span><span class="col-md-3"><button type = "button" class="btn-success" data-mid={{ movie_id|get_at_index:forloop.counter0 }}>Add</button></span></li>
     {% endfor %}
 </ul>
