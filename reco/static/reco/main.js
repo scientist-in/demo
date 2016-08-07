@@ -102,3 +102,14 @@ $('.btnsubmit').click(function(){
         
     }
 });
+
+//hide search when clicked outside
+$(document).mouseup(function (e)
+{
+    var container = $(".search_results");
+
+    if (!container.is(e.target)&& container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+    }
+});
