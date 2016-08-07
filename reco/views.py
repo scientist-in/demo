@@ -50,7 +50,12 @@ def get_recommendations(request):
     #ipdb.set_trace()
     with open('user_liked.json', 'w') as outfile:
             json.dump(user_liked, outfile)
+    try:
+        os.remove('recommendations.json')
+    except OSError:
+        pass   
     os.system("screen -S recosys -p 0 -X stuff \"run\\n\"")
+    
     while not os.path.isfile('recommendations.json'):
             pass
     sleep(.3)
