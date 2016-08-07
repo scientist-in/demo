@@ -101,4 +101,5 @@ def get_recommendations_nlp(request):
     movie_title = recommendations['title']
     movie_id = recommendations['movieId']
     recommendations_len = range(len(movie_id))
+    #http://54.83.149.27:8983/solr/recosys/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E
     return render_to_response('reco/recommendations_nlp.html',{'movie_id':movie_id,'movie_title':movie_title,'recommendations_len':recommendations_len})
