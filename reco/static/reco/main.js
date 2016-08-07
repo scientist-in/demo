@@ -25,7 +25,7 @@ $('.search_text').bind("enterKey",function(e){
    search_function();
 });
 $('.search_text').keyup(function(e){
-    if(e.keyCode == 13)
+    if(1)
     {
         $(this).trigger("enterKey");
     }
