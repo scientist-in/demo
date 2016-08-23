@@ -12,6 +12,11 @@ from time import sleep
 import pandas as pd
 import ipdb
 import re
+
+
+#frequent tags logic
+from nltk.corpus import stopwords
+from collections import Counter
 # Create your views here.
 def index(request):
     return render_to_response(
@@ -85,6 +90,12 @@ def get_recommendations_nlp(request):
     df = df.loc[[int(i) in user_liked for i in df['movieId']]]['tag']
     df = [re.sub(r"\n","",i) for i in df]
     all_tags = ''.join(str(i) for i in df)
+    
+    #frequent tags logic
+    stop = set(stopwords.words('english'))
+    all_tags =  [i for i in all_tags.lower().split() if i not in stop]
+    all_tags = ' '.join([i[0] for idx,i in enumerate(Counter(all_tags).most_common()) if idx<15])
+    
     all_tags_encoded = urllib.quote_plus(all_tags)
     if len(all_tags_encoded)>1990:
         if all_tags_encoded[1990]=='+':
@@ -100,7 +111,7 @@ def get_recommendations_nlp(request):
     jsonRes = jsonRes['response']['docs']
     reco_len = len(jsonRes)
     if reco_len>10:
-        jsonRes = jsonRes[0:10]
+        jsonRes = jsonRes[0:10] 
         reco_len = range(10)
     
     #ipdb.set_trace()
