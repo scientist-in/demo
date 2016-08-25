@@ -32,7 +32,7 @@ ratings_wide = ratings_wide.astype(int)
 training_data = ratings_wide.as_matrix()
 
 print('starting training')
-rbm.train(training_data, max_epochs = 100) # Don't run the training for more than 5000 epochs.
+rbm.train(training_data, max_epochs = 20) # Don't run the training for more than 5000 epochs.
 
 while(True):
     userInput = raw_input('enter "run" to predict: ')
