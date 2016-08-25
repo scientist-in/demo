@@ -33,7 +33,7 @@ def search(request):
     if os.getcwd() == '/home/keeda/Documents/scientist/demo/recosys/demo':
         solr_query = u"http://192.168.0.102:8983/solr/recosys/select?indent=on&q="+words_url_encoded+"&wt=json"
     else:
-        solr_query = u"http://54.175.11.6:8983/solr/recosys/select?indent=on&q="+words_url_encoded+"&wt=json"
+        solr_query = u"http://54.162.182.247:8983/solr/recosys/select?indent=on&q="+words_url_encoded+"&wt=json"
     response_from_search = requests.get(solr_query)
     jsonRes = response_from_search.json()
     jsonRes = jsonRes['response']['docs']
@@ -105,7 +105,7 @@ def get_recommendations_nlp(request):
     if os.getcwd() == '/home/keeda/Documents/scientist/demo/recosys/demo':
         solr_query = u"http://192.168.0.102:8983/solr/reconlp/select?indent=on&q="+all_tags_encoded+"&wt=json"
     else:
-        solr_query = u"http://54.175.11.6:8983/solr/reconlp/select?indent=on&q="+all_tags_encoded+"&wt=json"
+        solr_query = u"http://54.162.182.247:8983/solr/reconlp/select?indent=on&q="+all_tags_encoded+"&wt=json"
     print(solr_query)
     response_from_search = requests.get(solr_query)
     jsonRes = response_from_search.json()

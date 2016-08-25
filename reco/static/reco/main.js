@@ -4,7 +4,7 @@ $( document ).ready(function() {
 function search_function(){
   //some code
   $.ajax({
-        url: "http://54.175.11.6:8000/reco/search",
+        url: "http://54.162.182.247:8000/reco/search",
         type: "get", //send it through get method
         data:{ajaxid:3, search_term:$(".search_text").val()},
         success: function(response) {
@@ -68,7 +68,7 @@ $('.btnsubmit').click(function(){
     for(var i=0; i<liked_movies.length; i++) { user_liked[i] = parseInt(liked_movies[i], 10); }
     if (user_liked.length>0){
       $.ajax({
-        url: "http://54.175.11.6:8000/reco/recommendations",
+        url: "http://54.162.182.247:8000/reco/recommendations",
         type: "get", //send it through get method
         data:{ajaxid:5, user_liked:JSON.stringify(user_liked)},
         success: function(response) {
@@ -82,7 +82,7 @@ $('.btnsubmit').click(function(){
         }
     });
       $.ajax({
-        url: "http://54.175.11.6:8000/reco/recommendations_nlp",
+        url: "http://54.162.182.247:8000/reco/recommendations_nlp",
         //url: "http://192.168.0.102:8000/reco/recommendations_nlp",
         type: "get", //send it through get method
         data:{ajaxid:5, user_liked:JSON.stringify(user_liked)},
